@@ -21,6 +21,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.6'
+  gem 'mongoid-rspec'
   # gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
