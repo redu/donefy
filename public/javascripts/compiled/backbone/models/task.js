@@ -18,12 +18,18 @@
     Task.prototype.defaults = {
       body: null,
       author: null,
-      state: null
+      state: 'todo'
     };
 
     Task.prototype.initialize = function() {
       return this.bind("change:state", function() {
         return this.save();
+      });
+    };
+
+    Task.prototype.changeColumn = function(state) {
+      return this.set({
+        state: state
       });
     };
 

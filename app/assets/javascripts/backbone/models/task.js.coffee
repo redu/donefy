@@ -5,11 +5,14 @@ window = class Donefy.Models.Task extends Backbone.Model
   defaults:
     body: null
     author: null
-    state: null
+    state: 'todo'
 
   initialize: ->
     this.bind "change:state", ->
       this.save()
+
+  changeColumn: (state) ->
+    this.set({ state : state })
 
 class Donefy.Collections.TasksCollection extends Backbone.Collection
   model: Donefy.Models.Task
