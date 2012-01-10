@@ -1,10 +1,10 @@
-window = class Donefy.Models.Task extends Backbone.Model
+class Donefy.Models.Task extends Backbone.Model
   paramRoot: 'task'
   urlRoot: '/tasks'
 
   defaults:
-    body: null
-    author: null
+    body: 'lorem'
+    author: 'lipsum'
     state: 'todo'
 
   initialize: ->
