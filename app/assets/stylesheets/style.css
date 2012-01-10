@@ -1,0 +1,18 @@
+body {
+  margin: 0 auto;
+}
+
+.story-header {
+  width: 240px;
+}
+
+.story-header {
+  min-width: 240px;
+}
+
+.todo-header,
+.inprogress-header,
+.verify-header,
+.done-header {
+  min-width: 180px;
+}
