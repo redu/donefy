@@ -18,4 +18,5 @@ Donefy.Views.TaskView = Backbone.View.extend(
     this
 
   destroyTask : ->
+    this.model.destroy()
 )

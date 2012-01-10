@@ -9,8 +9,7 @@
         'author': 'jubis'
       });
       this.taskView = new Donefy.Views.TaskView({
-        model: this.task,
-        id: 12
+        model: this.task
       });
       $container = $("<div/>", {
         'id': 'container'
@@ -24,11 +23,20 @@
     it("should render correctly", function() {
       return (expect($("#container .task .author"))).toHaveHtml("jubis");
     });
-    return it("should update when the model changes", function() {
+    it("should update when the model changes", function() {
       this.task.set({
         'author': 'guila'
       });
       return (expect($("#container .task .author"))).toHaveHtml("guila");
+    });
+    return describe("when removing", function() {
+      return it("should trigger model's destroy event", function() {
+        var callback;
+        callback = jasmine.createSpy();
+        this.task.bind('destroy', callback);
+        $(".destroy").trigger('click');
+        return (expect(callback)).toHaveBeenCalled();
+      });
     });
   });
 

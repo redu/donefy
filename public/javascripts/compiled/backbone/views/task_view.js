@@ -19,7 +19,9 @@
       $(this.el).html(template);
       return this;
     },
-    destroyTask: function() {}
+    destroyTask: function() {
+      return this.model.destroy();
+    }
   });
 
 }).call(this);
